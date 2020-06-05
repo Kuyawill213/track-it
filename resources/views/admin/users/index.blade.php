@@ -9,7 +9,7 @@
                     <span>Users</span>
                     <span><a>
                         <button type="button" class="btn btn-primary float-right">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-plus"></i>
                         Add User
                         </button>
                         </a>
