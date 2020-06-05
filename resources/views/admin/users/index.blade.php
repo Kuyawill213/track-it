@@ -6,14 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <span>Users</span>
-                    <span><a>
-                        <button type="button" class="btn btn-primary float-right">
-                        <i class="fa fa-plus"></i>
-                        Add User
-                        </button>
-                        </a>
-                    </span>
+                    <span><i class="fa fa-users" aria-hidden="true"></i></span>
+                    <span><b>Users</b></span>
                 </div>
 
                 <div class="card-body">
@@ -36,13 +30,20 @@
                                 <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                                 <td>
                                     @can('edit-users')
-                                    <a href="{{ route('admin.users.edit', $user->id) }}"><button type="button" class="btn btn-primary float-left">Edit</button></a>
+                                    <a href="{{ route('admin.users.edit', $user->id) }}">
+                                        <button type="button" class="btn btn-primary float-left">
+                                        <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                        Edit
+                                        </button>
+                                    </a>
                                     @endcan
                                     @can('delete-users')
                                     <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="float-left">
                                         @csrf
                                         {{ method_field('DELETE') }}
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-danger">
+                                        <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                                        Delete</button>
                                     </form>
                                     @endcan
                                 </td>
